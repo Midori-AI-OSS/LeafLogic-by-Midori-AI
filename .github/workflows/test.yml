@@ -22,9 +22,13 @@ jobs:
 
     - name: Setup Android SDK
       uses: android-actions/setup-android@v3
+      with:
+        api-level: 34
+        build-tools: 34.0.0
+        ndk-version: 25.1.8937393
 
     - name: Cache Gradle packages
-      uses: actions/cache@v3
+      uses: actions/cache@v4
       with:
         path: |
           ~/.gradle/caches
@@ -36,17 +40,11 @@ jobs:
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
 
-    - name: Run Kotlin linter (ktlint)
-      run: ./gradlew ktlintCheck || true
-
     - name: Run Android lint
-      run: ./gradlew lint
+      run: ./gradlew lint --no-daemon --stacktrace
 
     - name: Run unit tests
-      run: ./gradlew testDebugUnitTest
-
-    - name: Generate test report
-      run: ./gradlew jacocoTestReport || true
+      run: ./gradlew testDebugUnitTest --no-daemon --stacktrace
 
     - name: Upload lint results
       uses: actions/upload-artifact@v4
