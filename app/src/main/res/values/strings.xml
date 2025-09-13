@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">LeafLogic</string>
-    <string name="app_description">Your AI-powered nutrition and health tracking companion</string>
+    <string name="app_description">Your LLM-powered nutrition and health tracking companion</string>
     
     <!-- Navigation -->
     <string name="nav_home">Home</string>
     <string name="nav_food_tracking">Food</string>
     <string name="nav_health">Health</string>
-    <string name="nav_chat">AI Chat</string>
+    <string name="nav_chat">LLM Chat</string>
     
     <!-- Home Screen -->
     <string name="home_welcome_title">Good morning! 🌱</string>
-    <string name="home_welcome_message">Ready to make healthy choices today? Let\'s track your nutrition and get personalized advice from your AI nutrition assistant.</string>
+    <string name="home_welcome_message">Ready to make healthy choices today? Let\'s track your nutrition and get personalized advice from your LLM nutrition assistant.</string>
     <string name="home_todays_overview">Today\'s Overview</string>
     <string name="home_recent_activities">Recent Activities</string>
     
@@ -29,8 +29,8 @@
     <string name="health_weekly_achievements">This Week\'s Achievements</string>
     <string name="health_daily_goal_progress">%d%% of daily goal</string>
     
-    <!-- AI Chat -->
-    <string name="chat_ai_assistant">AI Nutrition Assistant</string>
+    <!-- LLM Chat -->
+    <string name="chat_ai_assistant">LLM Nutrition Assistant</string>
     <string name="chat_online_status">Online</string>
     <string name="chat_input_hint">Ask about nutrition, recipes, or health tips...</string>
     <string name="chat_send">Send</string>
@@ -47,7 +47,7 @@
     <string name="cd_add_food">Add Food</string>
     <string name="cd_quick_log">Quick Log</string>
     <string name="cd_search">Search</string>
-    <string name="cd_ai_assistant">AI Assistant</string>
+    <string name="cd_ai_assistant">LLM Assistant</string>
     <string name="cd_user_avatar">User</string>
     <string name="cd_health_metric">Health Metric</string>
 </resources>

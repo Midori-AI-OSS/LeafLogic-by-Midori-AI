@@ -90,8 +90,20 @@ dependencies {
     implementation 'androidx.room:room-ktx:2.6.1'
     kapt 'androidx.room:room-compiler:2.6.1'
     
+    // SQLCipher for database encryption
+    implementation 'net.zetetic:android-database-sqlcipher:4.5.4'
+    
     // DataStore
     implementation 'androidx.datastore:datastore-preferences:1.0.0'
+    
+    // Biometric Authentication
+    implementation 'androidx.biometric:biometric:1.1.0'
+    
+    // Security and Encryption
+    implementation 'androidx.security:security-crypto:1.1.0-alpha06'
+    
+    // EXIF data extraction for photo-based security
+    implementation 'androidx.exifinterface:exifinterface:1.3.6'
     
     // Date/Time
     implementation 'org.jetbrains.kotlinx:kotlinx-datetime:0.5.0'

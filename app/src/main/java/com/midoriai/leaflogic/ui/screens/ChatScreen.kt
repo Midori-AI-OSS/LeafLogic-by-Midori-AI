@@ -63,13 +63,13 @@ fun ChatScreen(
                     ) {
                         Icon(
                             Icons.Default.SmartToy,
-                            contentDescription = "AI Assistant",
+                            contentDescription = "LLM Assistant",
                             tint = MaterialTheme.colorScheme.primary
                         )
                         Spacer(modifier = Modifier.width(8.dp))
                         Column {
                             Text(
-                                "AI Nutrition Assistant",
+                                "LLM Nutrition Assistant",
                                 style = MaterialTheme.typography.titleLarge,
                                 fontWeight = FontWeight.Bold
                             )
@@ -149,7 +149,7 @@ fun ChatMessageBubble(
         if (!message.isFromUser) {
             Icon(
                 Icons.Default.SmartToy,
-                contentDescription = "AI",
+                contentDescription = "LLM",
                 modifier = Modifier.size(32.dp),
                 tint = MaterialTheme.colorScheme.primary
             )

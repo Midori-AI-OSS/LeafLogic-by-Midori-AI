@@ -1,20 +1,23 @@
 package com.midoriai.leaflogic.data.local.database
 
+import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import android.content.Context
-import com.midoriai.leaflogic.data.local.entity.FoodEntryEntity
-import com.midoriai.leaflogic.data.local.entity.HealthMetricsEntity
-import com.midoriai.leaflogic.data.local.entity.ChatMessageEntity
-import com.midoriai.leaflogic.data.local.entity.UserGoalsEntity
+import com.midoriai.leaflogic.data.local.dao.ChatMessageDao
 import com.midoriai.leaflogic.data.local.dao.FoodEntryDao
 import com.midoriai.leaflogic.data.local.dao.HealthMetricsDao
-import com.midoriai.leaflogic.data.local.dao.ChatMessageDao
 import com.midoriai.leaflogic.data.local.dao.UserGoalsDao
+import com.midoriai.leaflogic.data.local.entity.ChatMessageEntity
+import com.midoriai.leaflogic.data.local.entity.FoodEntryEntity
+import com.midoriai.leaflogic.data.local.entity.HealthMetricsEntity
+import com.midoriai.leaflogic.data.local.entity.UserGoalsEntity
+import net.sqlcipher.database.SQLiteDatabase
+import net.sqlcipher.database.SupportFactory
 
 /**
- * Room database for local data storage
+ * Room database for local data storage with encryption support
+ * Uses SQLCipher for database encryption to protect sensitive health data
  */
 @Database(
     entities = [
@@ -35,5 +38,39 @@ abstract class LeafLogicDatabase : RoomDatabase() {
     
     companion object {
         const val DATABASE_NAME = "leaflogic_database"
+        
+        /**
+         * Create an encrypted database instance
+         * Uses a passphrase derived from device characteristics for security
+         */
+        fun createEncryptedDatabase(
+            context: Context, 
+            passphrase: String
+        ): LeafLogicDatabase {
+            // Create SQLCipher support factory with the passphrase
+            val supportFactory = SupportFactory(SQLiteDatabase.getBytes(passphrase.toCharArray()))
+            
+            return Room.databaseBuilder(
+                context,
+                LeafLogicDatabase::class.java,
+                DATABASE_NAME
+            )
+            .openHelperFactory(supportFactory)
+            .fallbackToDestructiveMigration() // For development - remove in production
+            .build()
+        }
+        
+        /**
+         * Create a standard (non-encrypted) database instance for testing or fallback
+         */
+        fun createStandardDatabase(context: Context): LeafLogicDatabase {
+            return Room.databaseBuilder(
+                context,
+                LeafLogicDatabase::class.java,
+                "${DATABASE_NAME}_standard"
+            )
+            .fallbackToDestructiveMigration()
+            .build()
+        }
     }
 }

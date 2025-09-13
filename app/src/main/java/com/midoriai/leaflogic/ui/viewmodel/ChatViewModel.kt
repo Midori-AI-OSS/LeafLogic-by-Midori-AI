@@ -11,8 +11,8 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 /**
- * ViewModel for the AI Chat screen
- * Manages chat state and communication with the AI nutrition assistant
+ * ViewModel for the LLM Chat screen
+ * Manages chat state and communication with the LLM nutrition assistant
  */
 @HiltViewModel
 class ChatViewModel @Inject constructor(
@@ -35,7 +35,7 @@ class ChatViewModel @Inject constructor(
         // Initialize with welcome message
         _messages.add(
             ChatMessage(
-                text = "Hello! I'm your AI nutrition assistant. How can I help you improve your eating habits today?",
+                text = "Hello! I'm your LLM nutrition assistant. How can I help you improve your eating habits today?",
                 isFromUser = false,
                 timestamp = "Just now"
             )
@@ -43,7 +43,7 @@ class ChatViewModel @Inject constructor(
     }
     
     /**
-     * Send a message to the AI assistant
+     * Send a message to the LLM assistant
      */
     fun sendMessage(messageText: String) {
         if (messageText.isBlank()) return
@@ -66,7 +66,7 @@ class ChatViewModel @Inject constructor(
                 // In production, this would call the actual API through the repository
                 val response = chatRepository.getMockResponse(messageText)
                 
-                // Add AI response
+                // Add LLM response
                 _messages.add(
                     ChatMessage(
                         text = response.response,
@@ -110,7 +110,7 @@ class ChatViewModel @Inject constructor(
         // Re-add welcome message
         _messages.add(
             ChatMessage(
-                text = "Hello! I'm your AI nutrition assistant. How can I help you improve your eating habits today?",
+                text = "Hello! I'm your LLM nutrition assistant. How can I help you improve your eating habits today?",
                 isFromUser = false,
                 timestamp = "Just now"
             )

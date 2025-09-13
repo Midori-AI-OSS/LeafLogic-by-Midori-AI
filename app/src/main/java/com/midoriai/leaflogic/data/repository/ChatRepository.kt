@@ -10,7 +10,7 @@ import javax.inject.Inject
 import javax.inject.Singleton
 
 /**
- * Repository for handling chat functionality with the AI nutrition assistant
+ * Repository for handling chat functionality with the LLM nutrition assistant
  */
 @Singleton
 class ChatRepository @Inject constructor(
@@ -49,7 +49,7 @@ class ChatRepository @Inject constructor(
     
     /**
      * Mock implementation for demo purposes
-     * This simulates AI responses for different types of nutrition questions
+     * This simulates LLM responses for different types of nutrition questions
      */
     fun getMockResponse(message: String): ChatResponse {
         val response = when {

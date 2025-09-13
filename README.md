@@ -1,4 +1,4 @@
-# LeafLogic - AI-Powered Health & Food Tracking App
+# LeafLogic - LLM-Powered Health & Food Tracking App
 
 LeafLogic is a modern Android health and food tracking app that leverages cloud-based Large Language Models (LLMs) to provide personalized nutrition advice and help users develop better eating habits.
 
@@ -25,8 +25,8 @@ LeafLogic is a modern Android health and food tracking app that leverages cloud-
 - Health insights and recommendations
 - Visual progress indicators
 
-### 🤖 AI Nutrition Assistant
-- Real-time chat with AI nutrition expert
+### 🤖 LLM Nutrition Assistant
+- Real-time chat with LLM nutrition expert
 - Personalized dietary recommendations
 - Nutritional question answering
 - Recipe suggestions
@@ -59,7 +59,14 @@ LeafLogic is a modern Android health and food tracking app that leverages cloud-
 - **Retrofit** for API communication
 - **OkHttp** with logging interceptor
 - **Kotlin Serialization** for JSON handling
-- **Cloud LLM APIs** for AI conversations
+- **Cloud LLM APIs** for LLM conversations
+
+### Security & Privacy
+- **Database Encryption** with SQLCipher for sensitive health data
+- **Biometric Authentication** using fingerprint/face recognition
+- **Photo-Enhanced Security** leveraging device characteristics and photo metadata
+- **Encrypted Shared Preferences** for sensitive app settings
+- **Device Fingerprinting** for additional security layer
 
 ## Project Structure
 
@@ -120,6 +127,13 @@ app/
 - **Memory Management**: Efficient ViewModels and data handling
 - **Battery Optimization**: Minimal background processing
 
+### Data Security
+- **End-to-End Encryption**: All sensitive data encrypted using Android Keystore
+- **Biometric Protection**: Secure access using fingerprint or face recognition
+- **Photo-Based Key Generation**: Enhanced security using device characteristics and photo metadata
+- **Database Encryption**: SQLCipher integration for encrypted local storage
+- **Privacy by Design**: No sensitive data stored in plaintext
+
 ## Contributing
 
 Please read our [AGENTS.md](AGENTS.md) file for detailed contribution guidelines and development practices.
@@ -149,7 +163,7 @@ This project is part of the Midori-AI ecosystem. Please refer to the main reposi
 - Future-proof design language
 
 ### Why Cloud LLMs?
-- Access to latest AI capabilities
+- Access to latest LLM capabilities
 - No need for on-device model storage
 - Better performance and accuracy
 - Regular model updates without app updates

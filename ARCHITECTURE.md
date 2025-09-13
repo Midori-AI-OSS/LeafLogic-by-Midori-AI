@@ -99,11 +99,11 @@ app/src/main/java/com/midoriai/leaflogic/
 - **Features**: Weight tracking, step counting, progress indicators
 - **Database**: `HealthMetricsEntity` for metrics storage
 
-### 4. AI Chat Assistant
+### 4. LLM Chat Assistant
 - **Composable**: `ChatScreen.kt`
 - **ViewModel**: `ChatViewModel.kt`
 - **Repository**: `ChatRepository.kt`
-- **Features**: Real-time chat, AI responses, conversation history
+- **Features**: Real-time chat, LLM responses, conversation history
 
 ## Data Flow
 
@@ -159,7 +159,7 @@ val NutritionalBlue40 = Color(0xFF2196F3)  // Tertiary color
 
 ### Cloud LLM Integration
 The app is designed to work with various LLM providers:
-- **OpenAI GPT**: For advanced conversational AI
+- **OpenAI GPT**: For advanced conversational LLM
 - **Anthropic Claude**: For nutrition-focused responses
 - **Custom LLM APIs**: Extensible architecture
 
@@ -220,7 +220,7 @@ The app is designed to work with various LLM providers:
 ## Future Enhancements
 
 ### Planned Features
-- [ ] Offline Mode: Local AI model integration
+- [ ] Offline Mode: Local LLM model integration
 - [ ] Wearable Support: Android Wear integration
 - [ ] Social Features: Community and sharing
 - [ ] Advanced Analytics: ML-powered insights
@@ -255,4 +255,4 @@ NUTRITION_API_KEY=your_api_key_here
 NUTRITION_API_BASE_URL=https://api.your-provider.com/v1/
 ```
 
-This architecture provides a solid foundation for a scalable, maintainable, and user-friendly health tracking application with AI-powered nutrition guidance.
+This architecture provides a solid foundation for a scalable, maintainable, and user-friendly health tracking application with LLM-powered nutrition guidance.

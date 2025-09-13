@@ -115,7 +115,7 @@ fun HomeScreen() {
             
             item {
                 RecentActivityCard(
-                    activity = "AI Nutrition Tip",
+                    activity = "LLM Nutrition Tip",
                     time = "Yesterday",
                     details = "Try adding more leafy greens to boost iron intake"
                 )
@@ -142,7 +142,7 @@ fun WelcomeCard() {
             )
             Spacer(modifier = Modifier.height(8.dp))
             Text(
-                "Ready to make healthy choices today? Let's track your nutrition and get personalized advice from your AI nutrition assistant.",
+                "Ready to make healthy choices today? Let's track your nutrition and get personalized advice from your LLM nutrition assistant.",
                 style = MaterialTheme.typography.bodyMedium,
                 color = MaterialTheme.colorScheme.onPrimaryContainer
             )

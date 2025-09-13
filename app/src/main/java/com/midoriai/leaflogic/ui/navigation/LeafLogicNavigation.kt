@@ -36,7 +36,7 @@ sealed class BottomNavItem(
     object Home : BottomNavItem("home", "Home", Icons.Default.Home)
     object FoodTracking : BottomNavItem("food_tracking", "Food", Icons.Default.Restaurant)
     object Health : BottomNavItem("health", "Health", Icons.Default.Favorite)
-    object Chat : BottomNavItem("chat", "AI Chat", Icons.Default.Chat)
+    object Chat : BottomNavItem("chat", "LLM Chat", Icons.Default.Chat)
 }
 
 @Composable
