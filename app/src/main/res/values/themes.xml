@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.LeafLogic" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <item name="colorPrimary">@color/leaf_green_40</item>
+        <item name="colorOnPrimary">@color/neutral_gray_99</item>
+        <item name="colorPrimaryContainer">@color/leaf_green_90</item>
+        <item name="colorOnPrimaryContainer">@color/neutral_gray_10</item>
+        
+        <item name="colorSecondary">@color/accent_orange_40</item>
+        <item name="colorOnSecondary">@color/neutral_gray_99</item>
+        <item name="colorSecondaryContainer">@color/accent_orange_90</item>
+        <item name="colorOnSecondaryContainer">@color/neutral_gray_10</item>
+        
+        <item name="colorTertiary">@color/nutritional_blue_40</item>
+        <item name="colorOnTertiary">@color/neutral_gray_99</item>
+        <item name="colorTertiaryContainer">@color/nutritional_blue_90</item>
+        <item name="colorOnTertiaryContainer">@color/neutral_gray_10</item>
+        
+        <item name="colorError">@color/health_red_40</item>
+        <item name="colorOnError">@color/neutral_gray_99</item>
+        <item name="colorErrorContainer">@color/health_red_90</item>
+        <item name="colorOnErrorContainer">@color/neutral_gray_10</item>
+        
+        <item name="android:colorBackground">@color/neutral_gray_99</item>
+        <item name="colorOnBackground">@color/neutral_gray_10</item>
+        <item name="colorSurface">@color/neutral_gray_99</item>
+        <item name="colorOnSurface">@color/neutral_gray_10</item>
+        <item name="colorSurfaceVariant">@color/neutral_gray_95</item>
+        <item name="colorOnSurfaceVariant">@color/neutral_gray_10</item>
+        <item name="colorOutline">@color/neutral_gray_20</item>
+    </style>
+
+    <style name="Theme.LeafLogic" parent="Base.Theme.LeafLogic" />
+</resources>
