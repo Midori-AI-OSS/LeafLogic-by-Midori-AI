@@ -33,6 +33,8 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.setValue
+import androidx.hilt.navigation.compose.hiltViewModel
+import com.midoriai.leaflogic.ui.viewmodel.ChatViewModel
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
@@ -46,39 +48,11 @@ data class ChatMessage(
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun ChatScreen() {
+fun ChatScreen(
+    viewModel: ChatViewModel = hiltViewModel()
+) {
     var messageText by remember { mutableStateOf("") }
-    
-    // Sample chat messages
-    val chatMessages = remember {
-        mutableListOf(
-            ChatMessage(
-                text = "Hello! I'm your AI nutrition assistant. How can I help you improve your eating habits today?",
-                isFromUser = false,
-                timestamp = "Just now"
-            ),
-            ChatMessage(
-                text = "I've been feeling tired lately. Could it be related to my diet?",
-                isFromUser = true,
-                timestamp = "Just now"
-            ),
-            ChatMessage(
-                text = "Yes, fatigue can definitely be related to nutrition! Based on your recent food logs, I notice you might be low on iron and B vitamins. You've been eating well, but adding more leafy greens like spinach and lean red meat could help boost your energy levels. Also, are you drinking enough water?",
-                isFromUser = false,
-                timestamp = "Just now"
-            ),
-            ChatMessage(
-                text = "I probably don't drink enough water. How much should I be drinking?",
-                isFromUser = true,
-                timestamp = "Just now"
-            ),
-            ChatMessage(
-                text = "For your activity level and body weight, I'd recommend about 8-10 glasses (64-80 oz) of water per day. You can track this in your health metrics! Try starting your day with a glass of water and keeping a water bottle nearby as a reminder.",
-                isFromUser = false,
-                timestamp = "Just now"
-            )
-        )
-    }
+    val chatMessages = viewModel.messages
 
     Scaffold(
         topBar = {
@@ -148,7 +122,7 @@ fun ChatScreen() {
                 IconButton(
                     onClick = {
                         if (messageText.isNotBlank()) {
-                            // TODO: Add message to chat and get AI response
+                            viewModel.sendMessage(messageText)
                             messageText = ""
                         }
                     }
